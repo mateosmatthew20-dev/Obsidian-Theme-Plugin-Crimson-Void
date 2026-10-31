@@ -989,21 +989,17 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows: preserve Obsidian's native positioning of the titlebar
-   and window buttons. Only lift the native hit targets above glow.
-   Never assign position: relative here: it moves controls to the
-   left and introduces an extra window-titlebar row. */
-body.theme-dark.mod-windows .titlebar {
-  z-index: 30;
-}
-body.theme-dark.mod-windows .titlebar-button-container {
-  z-index: 50;
+/* Windows controls: preserve the app's native frame layout.
+   Only restore native right alignment and click handling; never
+   reposition .titlebar or change the controls' shape/size. */
+body.theme-dark.mod-windows .titlebar-button-container.mod-right {
+  position: absolute;
+  left: auto;
+  right: 0;
   pointer-events: auto;
+  -webkit-app-region: no-drag;
 }
-body.theme-dark.mod-windows .titlebar-button-container .titlebar-button {
+body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button {
   pointer-events: auto;
-}
-body.theme-dark.mod-windows .titlebar-button-container::before,
-body.theme-dark.mod-windows .titlebar-button-container::after {
-  pointer-events: none;
+  -webkit-app-region: no-drag;
 }
