@@ -989,17 +989,11 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows controls: preserve the app's native frame layout.
-   Only restore native right alignment and click handling; never
-   reposition .titlebar or change the controls' shape/size. */
-body.theme-dark.mod-windows .titlebar-button-container.mod-right {
-  position: absolute;
-  left: auto;
-  right: 0;
-  pointer-events: auto;
+/* Windows window-button hit targets.
+   Do not alter Obsidian titlebar layout, position, dimensions, or
+   appearance. Prevent the draggable region from stealing clicks. */
+body.theme-dark.mod-windows .titlebar-button-container,
+body.theme-dark.mod-windows .titlebar-button-container .titlebar-button {
   -webkit-app-region: no-drag;
-}
-body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button {
   pointer-events: auto;
-  -webkit-app-region: no-drag;
 }
