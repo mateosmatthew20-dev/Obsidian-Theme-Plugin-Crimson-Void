@@ -1,0 +1,1 @@
+# Obsidian-Theme-Plugin-Crimson-Void
