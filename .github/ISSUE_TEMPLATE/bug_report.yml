@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a Crimson Void Theme or FX problem
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Theme
+        - FX plugin
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: obsidian
+    attributes:
+      label: Obsidian version
+      placeholder: "e.g. 1.x"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "e.g. Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "What did you do? What happened? What did you expect?"
+    validations:
+      required: true
+  - type: textarea
+    id: performance
+    attributes:
+      label: Performance details (optional)
+      description: "For graph issues, include approximate note/link counts and FPS with FX on/off."
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or logs (optional)
+      description: "Redact private note content, personal paths, and secrets before uploading."
