@@ -987,3 +987,52 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 @media (prefers-reduced-motion: reduce) {
   body.theme-dark :is(.workspace-tab-header,.nav-file-title,.nav-folder-title,.clickable-icon) { transition: none !important; }
 }
+
+
+/* ============================================================
+   Windows titlebar hit-target fix
+   Keep native minimize/maximize/close actions above cosmetic
+   tab glow; never let decorations intercept pointer input.
+   ============================================================ */
+body.theme-dark.mod-windows .titlebar {
+  position: relative;
+  z-index: 30;
+  overflow: visible;
+}
+body.theme-dark.mod-windows .titlebar-button-container {
+  position: relative;
+  z-index: 50;
+  isolation: isolate;
+  pointer-events: auto;
+}
+body.theme-dark.mod-windows .titlebar-button-container .titlebar-button {
+  position: relative;
+  z-index: 1;
+  min-width: 46px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: default;
+  transform: none !important;
+  border-radius: 0;
+}
+/* Preserve Obsidian's own window-control hit regions. */
+body.theme-dark.mod-windows .titlebar-button-container::before,
+body.theme-dark.mod-windows .titlebar-button-container::after {
+  pointer-events: none;
+}
+body.theme-dark.mod-windows .titlebar-button-container .titlebar-button:hover {
+  background: rgba(255, 40, 28, .22);
+  box-shadow: inset 0 -1px 0 rgba(255, 92, 72, .38);
+}
+body.theme-dark.mod-windows .titlebar-button-container .titlebar-button.mod-close:hover {
+  background: #c42b23;
+  color: #fff;
+}
+/* Workspace decoration must not cover Windows controls. */
+body.theme-dark.mod-windows .mod-root .workspace-tab-header-container,
+body.theme-dark.mod-windows .workspace-tab-header-container {
+  z-index: auto;
+}
