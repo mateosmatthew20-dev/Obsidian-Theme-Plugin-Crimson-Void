@@ -987,3 +987,17 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 @media (prefers-reduced-motion: reduce) {
   body.theme-dark :is(.workspace-tab-header,.nav-file-title,.nav-folder-title,.clickable-icon) { transition: none !important; }
 }
+
+
+/* Windows hidden frame: keep native window buttons above Crimson Void's
+   positioned, overflow-visible tab-header decorations. Do not change
+   the native titlebar's position, dimensions, or the tab layout. */
+body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar {
+  z-index: 1001 !important;
+  pointer-events: none !important;
+}
+body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
+body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right .titlebar-button {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
