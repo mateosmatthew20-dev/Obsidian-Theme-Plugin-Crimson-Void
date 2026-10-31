@@ -1,0 +1,9 @@
+{
+  "id": "crimson-void",
+  "name": "Crimson Void FX",
+  "version": "8.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Cinematic Obsidian atmosphere with automatic zero-overhead Graph View performance protection, animated notes and empty tabs.",
+  "author": "Custom Build",
+  "isDesktopOnly": false
+}
