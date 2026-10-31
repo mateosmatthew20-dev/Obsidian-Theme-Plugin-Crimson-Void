@@ -13,7 +13,9 @@ Crimson Void transforms Obsidian into a high-contrast, atmospheric workspace: de
 - **Configurable performance:** animation and quality controls; reduced-motion support
 
 ## Screenshots
-Real native-Obsidian screenshots are being collected. **Please do not publish browser mockups as screenshots of the actual plugin.** If you'd like to contribute genuine screenshots, open an issue with your OS and Obsidian version.<img width="625" height="394" alt="image" src="https://github.com/user-attachments/assets/88b3e0a0-f033-4a24-8062-92b985f12df2" />
+<img width="1331" height="769" alt="Screenshot 2026-10-31 151118" src="https://github.com/user-attachments/assets/9f9eeba7-43ab-4bff-9528-ef50147b310a" />
+<img width="1336" height="767" alt="Screenshot 2026-10-31 151143" src="https://github.com/user-attachments/assets/07c47b98-8fc9-44e8-8824-1df35ba511fc" />
+.<img width="625" height="394" alt="image" src="https://github.com/user-attachments/assets/88b3e0a0-f033-4a24-8062-92b985f12df2" />
 
 
 ## Installation
