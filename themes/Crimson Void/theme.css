@@ -989,17 +989,24 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows controls: preserve the app's native frame layout.
-   Only restore native right alignment and click handling; never
-   reposition .titlebar or change the controls' shape/size. */
+/* Windows frame controls: larger click targets without layout changes.
+   The buttons keep Obsidian's native position, dimensions and crimson
+   hover styling. Only invisible hit regions are extended vertically. */
 body.theme-dark.mod-windows .titlebar-button-container.mod-right {
-  position: absolute;
-  left: auto;
-  right: 0;
-  pointer-events: auto;
   -webkit-app-region: no-drag;
+  pointer-events: auto;
+  z-index: 10;
 }
 body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button {
+  position: relative;
+  -webkit-app-region: no-drag;
+  pointer-events: auto;
+}
+body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button::after {
+  content: "";
+  position: absolute;
+  inset: -5px 0;
+  background: transparent;
   pointer-events: auto;
   -webkit-app-region: no-drag;
 }
