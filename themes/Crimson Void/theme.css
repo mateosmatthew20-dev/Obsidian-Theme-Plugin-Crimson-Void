@@ -989,11 +989,15 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows Hidden Frame: allow clicks through the reserved top-right
-   tab-bar overlay onto Obsidian's actual minimize/maximize/close buttons.
-   Do not alter positions, dimensions, borders, or window dragging elsewhere. */
-body.is-hidden-frameless.mod-windows .workspace-tabs.mod-top-right-space .workspace-tab-header-container::after {
-  pointer-events: none !important;
+/* Windows hidden-frame controls: Obsidian reserves the top-right
+   control area with padding-right and a pseudo-element. Crimson Void
+   uses header ::after for a decorative glow, which can overlap that
+   native control area. Remove ONLY this pseudo-element in the Windows
+   top-right reserved area; padding and native controls remain intact. */
+body.is-hidden-frameless.mod-windows:not(.is-fullscreen)
+  .workspace-tabs.mod-top-right-space .workspace-tab-header-container::after {
+  content: none !important;
+  display: none !important;
 }
 body.is-hidden-frameless.mod-windows .titlebar-button-container.mod-right,
 body.is-hidden-frameless.mod-windows .titlebar-button-container.mod-right .titlebar-button {
