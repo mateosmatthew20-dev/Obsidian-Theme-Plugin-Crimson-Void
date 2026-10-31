@@ -989,24 +989,14 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows frame controls: larger click targets without layout changes.
-   The buttons keep Obsidian's native position, dimensions and crimson
-   hover styling. Only invisible hit regions are extended vertically. */
-body.theme-dark.mod-windows .titlebar-button-container.mod-right {
-  -webkit-app-region: no-drag;
-  pointer-events: auto;
-  z-index: 10;
+/* Windows Hidden Frame: allow clicks through the reserved top-right
+   tab-bar overlay onto Obsidian's actual minimize/maximize/close buttons.
+   Do not alter positions, dimensions, borders, or window dragging elsewhere. */
+body.is-hidden-frameless.mod-windows .workspace-tabs.mod-top-right-space .workspace-tab-header-container::after {
+  pointer-events: none !important;
 }
-body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button {
-  position: relative;
-  -webkit-app-region: no-drag;
-  pointer-events: auto;
-}
-body.theme-dark.mod-windows .titlebar-button-container.mod-right .titlebar-button::after {
-  content: "";
-  position: absolute;
-  inset: -5px 0;
-  background: transparent;
+body.is-hidden-frameless.mod-windows .titlebar-button-container.mod-right,
+body.is-hidden-frameless.mod-windows .titlebar-button-container.mod-right .titlebar-button {
   pointer-events: auto;
   -webkit-app-region: no-drag;
 }
