@@ -989,27 +989,21 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows titlebar: keep original Crimson Void button appearance while
-   placing native controls above decorative layers for reliable clicking. */
+/* Windows: preserve Obsidian's native positioning of the titlebar
+   and window buttons. Only lift the native hit targets above glow.
+   Never assign position: relative here: it moves controls to the
+   left and introduces an extra window-titlebar row. */
 body.theme-dark.mod-windows .titlebar {
-  position: relative;
   z-index: 30;
 }
 body.theme-dark.mod-windows .titlebar-button-container {
-  position: relative;
   z-index: 50;
   pointer-events: auto;
 }
 body.theme-dark.mod-windows .titlebar-button-container .titlebar-button {
-  position: relative;
-  z-index: 1;
   pointer-events: auto;
 }
 body.theme-dark.mod-windows .titlebar-button-container::before,
 body.theme-dark.mod-windows .titlebar-button-container::after {
   pointer-events: none;
-}
-body.theme-dark.mod-windows .mod-root .workspace-tab-header-container,
-body.theme-dark.mod-windows .workspace-tab-header-container {
-  z-index: auto;
 }
