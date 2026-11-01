@@ -1,5 +1,10 @@
 # Changelog
 
+## Crimson direction correction (2026-10-31)
+
+- Restored saturated red instead of copper/orange; richer illuminated tabs, sidebar selections, eclipse bloom, smoke and embers following Matthew's feedback.
+- Preserved native Windows controls and separate theme/FX ownership.
+
 ## Crimson Eclipse — Theme 4.1.0 + FX 8.1.0 (2026-10-31)
 
 - Refined top strip, molten active tabs, sidebar hierarchy and selections, ribbon, menus and settings.

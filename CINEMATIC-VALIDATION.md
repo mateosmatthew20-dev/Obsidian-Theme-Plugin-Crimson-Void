@@ -22,3 +22,7 @@ No measured FPS/GPU claim. No runtime testing of reduced-motion OS preference, m
 
 ## Installation
 Updated the active vault's theme CSS/manifest and plugin CSS/main.js/manifest. The FX plugin must be reloaded to pick up CSS updates; this was done in the running instance. No extra service, dependency, external asset, or setting is required. Backups are local in `.debug-native/cinematic-before/` and are not part of the repository commit.
+
+
+## Superseding visual correction - 2026-10-31
+Matthew rejected the copper/orange, restrained styling as too simple and insufficiently red. The corrective pass uses saturated red throughout the recent theme/FX section, stronger tab bevel/glow and sidebar selections, fuller smoke/embers, brighter red eclipse bloom, and the original cropped composition. Markdown atmosphere is now .70 (.50 while editing), canvas opacity 1, smoke .91/.39 times saved energy/aura. These values supersede the original .44/.30 treatment above. No saved preferences, particle counts, native titlebar cutout or plugin logic changed. CSS parse/whitespace checks and live Windows preview performed again. No new performance claim.
