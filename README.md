@@ -1,7 +1,7 @@
 # Crimson Void
 **A cinematic scarlet-and-black Obsidian theme + optional animated FX plugin.**
 
-> **Public beta — Theme v4.0.0 · FX v8.0.0.** Source is available now. These builds have undergone simulated/browser checks, but have not been comprehensively verified across native Obsidian versions, operating systems, and large vaults.
+> **Public beta — Theme v4.1.0 · FX v8.1.0.** Source is available now. These builds have undergone simulated/browser checks, but have not been comprehensively verified across native Obsidian versions, operating systems, and large vaults.
 
 Crimson Void transforms Obsidian into a high-contrast, atmospheric workspace: deep black panels, vivid scarlet controls, a dramatic eclipse backdrop, and red network styling for Graph View. The **theme** owns the permanent appearance; the optional **FX plugin** adds motion and configurable ambience.
 
@@ -49,7 +49,7 @@ plugins/crimson-void/
 - **Native end-to-end testing is still needed.** Report problems using the GitHub issue template.
 
 ## Beta release notes
-See [CHANGELOG.md](CHANGELOG.md) for the current v4/v8 beta notes, known issues, and testing status.
+See [CHANGELOG.md](CHANGELOG.md) for the current beta notes, known issues, and testing status.
 
 ## Feedback & contributions
 Use [Issues](../../issues) for bug reports, accessibility problems, screenshots, and performance observations. Include your OS, Obsidian version, theme/FX versions, vault size (note and link counts if possible), and reproduction steps. Never upload private vault files or API tokens.

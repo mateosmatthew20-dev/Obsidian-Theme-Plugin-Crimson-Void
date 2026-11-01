@@ -1,6 +1,6 @@
 'use strict';
 
-/* Crimson Void FX 8.0 — local-only Obsidian plugin. No remote assets or services. */
+/* Crimson Void FX 8.1 — local-only Obsidian plugin. No remote assets or services. */
 const { Plugin, PluginSettingTab, Setting, Notice } = require('obsidian');
 
 const DEFAULTS = Object.freeze({
@@ -200,7 +200,7 @@ class CrimsonSettings extends PluginSettingTab {
     root.addClass('cv-settings');
 
     const hero = root.createDiv({ cls: 'cv-config-hero' });
-    hero.createDiv({ cls: 'cv-overline', text: 'CRIMSON / VOID    —    ATMOSPHERE ENGINE 8.0' });
+    hero.createDiv({ cls: 'cv-overline', text: 'CRIMSON / VOID    —    ECLIPSE EDITION / 8.1' });
     hero.createEl('h2', { text: 'Make the entire vault feel alive.' });
     hero.createEl('p', { text: 'Eclipse-lit editor, atmospheric empty tabs and a scarlet network graph. Visual layers never edit your notes or intercept your graph interactions.' });
 

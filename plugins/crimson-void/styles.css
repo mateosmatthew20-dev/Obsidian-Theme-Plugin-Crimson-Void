@@ -807,6 +807,126 @@ body.cv-active.theme-dark .cv-surface--markdown .cv-vignette {
 }
 
 
+/* Crimson Eclipse — one aligned disk/corona/rim, using existing local layers.
+   Motion changes transforms/opacity only; no animated blur or new canvases. */
+body.cv-active.theme-dark[data-cv-scene="eclipse"] {
+  --cv-eclipse-size: min(80vw, 960px);
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-backdrop {
+  background: radial-gradient(ellipse at 86% 15%, rgba(114, 28, 12, .32), transparent 60%),
+    radial-gradient(ellipse at 100% 85%, rgba(110, 13, 9, .18), transparent 55%),
+    linear-gradient(120deg, #050405, #0a0506 58%, #140708);
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] :is(.cv-sun, .cv-corona, .cv-hot-rim) {
+  width: var(--cv-eclipse-size);
+  height: var(--cv-eclipse-size);
+  right: var(--cv-orbit-right);
+  top: var(--cv-orbit-top);
+  border-radius: 50%;
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-sun {
+  background: radial-gradient(circle,
+    #020203 0 42.8%, #070304 44.3%, #3a0906 44.9%,
+    #ff4b27 45.35%, #ffc18b 45.55%, #f64220 45.85%,
+    rgba(226, 32, 12, .46) 47.4%, rgba(170, 21, 10, .16) 52%, transparent 67%);
+  filter: none;
+  animation: none;
+  opacity: var(--cv-energy);
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-corona {
+  background: conic-gradient(from 12deg, transparent 0 87deg,
+    rgba(255, 92, 35, .28) 113deg, rgba(255, 166, 97, .85) 139deg,
+    rgba(255, 56, 25, .64) 166deg, transparent 200deg,
+    rgba(255, 50, 20, .12) 257deg, transparent 286deg,
+    rgba(255, 91, 41, .32) 318deg, transparent 360deg);
+  filter: blur(3px);
+  opacity: calc(var(--cv-energy) * var(--cv-aura-level));
+  animation-duration: calc(var(--cv-slow) * 5);
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-hot-rim {
+  background: conic-gradient(from 8deg, transparent 0 96deg,
+    rgba(255, 73, 29, .3) 119deg, #fff0c6 142deg,
+    #ff7d3d 149deg, rgba(255, 43, 17, .6) 166deg, transparent 188deg);
+  filter: drop-shadow(0 0 10px rgba(255, 84, 34, .55));
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-nebula {
+  opacity: calc(.62 * var(--cv-energy) * var(--cv-aura-level));
+  filter: saturate(.9) contrast(1.28);
+}
+body.cv-active.theme-dark[data-cv-scene="eclipse"] .cv-nebula-alt {
+  opacity: calc(.22 * var(--cv-energy) * var(--cv-aura-level));
+}
+body.cv-active.theme-dark .cv-surface--empty {
+  --cv-orbit-top: -24%;
+  --cv-orbit-right: -12%;
+}
+/* Preserve the placement dropdown: only the default composition is adjusted. */
+body.cv-active.theme-dark[data-cv-orbit="far-right"] .cv-surface--empty { --cv-orbit-right: -34%; --cv-orbit-top: -41%; }
+body.cv-active.theme-dark[data-cv-orbit="center-right"] .cv-surface--empty { --cv-orbit-right: -6%; --cv-orbit-top: -30%; }
+body.cv-active.theme-dark .cv-surface--markdown > .cv-scene { opacity: .44; }
+body.cv-active.cv-focus-dim.theme-dark .cv-surface--markdown.cv-editor-focused > .cv-scene { opacity: .30; }
+body.cv-active.theme-dark .cv-canvas { opacity: .68; }
+body.cv-active.theme-dark .cv-surface--markdown .cv-ink-shield {
+  background: linear-gradient(90deg, rgba(3,2,3,calc(.22 + var(--cv-ink-protect))) 0%,
+    rgba(3,2,3,var(--cv-ink-protect)) 62%, transparent);
+}
+body.cv-active.theme-dark .cv-surface--markdown .cv-meteors {
+  opacity: calc(.22 * var(--cv-energy));
+  animation: none;
+}
+body.cv-active.theme-dark .cv-meteors { filter: none; }
+body.cv-active.theme-dark .cv-grain { opacity: .045; }
+body.cv-active.theme-dark .cv-surface--empty .cv-corner-light {
+  inset: 20px;
+  border-color: rgba(255, 114, 56, .08);
+  background: linear-gradient(90deg, #e87845, transparent) top left / 64px 1px no-repeat,
+    linear-gradient(#e87845, transparent) top left / 1px 48px no-repeat,
+    linear-gradient(270deg, #8a3824, transparent) bottom right / 64px 1px no-repeat;
+  box-shadow: none;
+}
+/* Existing settings UI: composed hero, warmer highlights and readable controls. */
+.cv-settings { --cv-settings-border: rgba(255, 121, 71, .18); }
+.cv-settings .cv-config-hero {
+  background: radial-gradient(ellipse at 100% 0%, rgba(159, 41, 17, .20), transparent 66%),
+    linear-gradient(135deg, #21100d, #0c0809 70%);
+  border-radius: 12px;
+  box-shadow: inset 0 1px rgba(255, 187, 125, .08), 0 20px 48px rgba(0,0,0,.22);
+}
+.cv-settings .cv-overline { color: #fca578; letter-spacing: .16em; }
+.cv-settings .cv-config-hero h2 { color: #ffecd8; }
+.cv-settings .cv-config-hero p { color: #bfa79a; }
+.cv-settings .cv-config-banner {
+  height: 190px;
+  border-color: rgba(255, 118, 64, .23);
+  background: radial-gradient(ellipse at 83% 20%, #5c190e, transparent 70%), #060405;
+}
+.cv-settings .cv-config-banner[data-scene="eclipse"] .cv-mini-cut {
+  background: #040304;
+  box-shadow: 0 0 0 1px #ffe1ac, 0 0 0 3px #ed5929, 0 0 42px 9px rgba(212, 45, 15, .4);
+}
+.cv-settings .cv-config-label, .cv-settings .cv-section-title { color: #efa17a; }
+.cv-settings .cv-config-name { color: #ffe8cb; font-size: 26px; }
+.cv-settings .cv-scene-choice {
+  background: linear-gradient(140deg, #1c100e, #0d090a);
+  border-color: rgba(255, 122, 73, .13);
+  border-radius: 9px;
+}
+.cv-settings .cv-scene-choice:hover { background: #26130e; border-color: #995237; }
+.cv-settings .cv-scene-choice[aria-pressed="true"] {
+  border-color: #ef8e55;
+  box-shadow: inset 0 0 0 1px rgba(255, 159, 89, .12), 0 6px 22px rgba(0,0,0,.2);
+}
+.cv-settings .cv-scene-choice[data-scene="eclipse"] .cv-scene-thumb-line {
+  background: #050405;
+  box-shadow: 0 0 0 1px #ffe0aa, 0 0 0 3px #e85228, 0 0 30px 5px #862417;
+}
+.cv-settings .cv-scene-name { color: #ffe9d6; }
+.cv-settings .cv-scene-sub { color: #b99c8d; }
+.cv-settings .setting-item { border-color: rgba(255, 119, 68, .10); }
+@media (max-width: 700px) {
+  .cv-settings .cv-config-banner { height: 150px; }
+}
+
 /* FX 8.0: native graph renderer gets full compositor/GPU priority. */
 body.cv-graph-safe .cv-scene { display: none !important; }
 body.cv-graph-safe .cv-scene,

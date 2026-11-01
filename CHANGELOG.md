@@ -1,5 +1,14 @@
 # Changelog
 
+## Crimson Eclipse — Theme 4.1.0 + FX 8.1.0 (2026-10-31)
+
+- Refined top strip, molten active tabs, sidebar hierarchy and selections, ribbon, menus and settings.
+- Aligned eclipse disk, corona and hot rim; removed animated disk blur and scaling.
+- More restrained smoke and particles; lower atmosphere opacity behind Markdown, with extra dimming while editing.
+- Redesigned existing FX settings hero and scene cards. Saved preferences, renderer budgets and Graph Performance Guard unchanged.
+- Preserved the verified Windows native control cutout fix. Theme and FX remain independently usable.
+- CSS parsing and live Windows Obsidian 1.14.5 validation recorded in `CINEMATIC-VALIDATION.md`. Other versions/platforms and measured performance remain pending.
+
 ## Public Beta â€” Theme 4.0.0 + FX 8.0.0 (2026-10-31)
 
 ### Included
