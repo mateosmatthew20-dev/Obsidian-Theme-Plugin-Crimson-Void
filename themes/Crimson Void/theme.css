@@ -1054,56 +1054,31 @@ body.theme-dark .workspace-leaf-content > .view-header {
   box-shadow: 0 6px 18px rgba(0, 0, 0,.18);
 }
 body.theme-dark .view-header-title { color: #e5c4c4; }
-/* Sidebar: a bright crimson edge, deep recessed tree and a distinct selected row. */
+/* Sidebar — restore original Crimson Void palette, with a subtle red boost.
+   Keep the prior folder-row geometry, ribbon interactions and file hierarchy. */
 body.theme-dark .workspace-split.mod-sidedock {
-  background: radial-gradient(ellipse at 0% 0%, rgba(193,8,8,.21), transparent 60%), linear-gradient(180deg, #1a0707, #090404 65%, #140505);
-  border-color: rgba(255,28,28,.42);
-  box-shadow: inset -1px 0 rgba(255,55,55,.16), inset -16px 0 28px rgba(0,0,0,.2);
+  background:
+    radial-gradient(ellipse 110% 46% at -20% 2%, rgba(255, 26, 26, .115), transparent 69%),
+    linear-gradient(180deg, #120708 0%, #080405 42%, #0e0506 100%);
+  border-right: 1px solid rgba(255, 43, 28, .31);
+  box-shadow: inset -13px 0 18px rgba(0, 0, 0, .18);
 }
 body.theme-dark .workspace-split.mod-sidedock .workspace-tab-header-container {
-  background: linear-gradient(180deg, #1c0c0c, #100808);
+  background: linear-gradient(180deg, #140708, #090405);
+  border-bottom-color: rgba(255, 40, 29, .23);
 }
 body.theme-dark .workspace-ribbon {
-  background: linear-gradient(90deg, #090505, #160909 75%, #0b0606);
-  border-right-color: rgba(255, 47, 47, .27);
-  box-shadow: inset -1px 0 rgba(255, 114, 114, .045);
+  background: linear-gradient(90deg, #050304 0%, #110506 52%, #070304 100%);
+  border-right: 1px solid rgba(255, 48, 32, .36);
+  box-shadow: inset -1px 0 rgba(255, 120, 105, .06), 6px 0 28px rgba(0, 0, 0, .3);
 }
-body.theme-dark .workspace-ribbon .clickable-icon { color: #b88f8f; }
-body.theme-dark .workspace-ribbon :is(.clickable-icon:hover, .side-dock-ribbon-action.is-active) {
-  background: linear-gradient(145deg, rgba(255, 46, 46, .24), rgba(130, 14, 14, .16));
-  box-shadow: inset 0 0 0 1px rgba(255, 73, 73, .24), 0 0 15px rgba(255, 21, 21, .12);
-  color: #ffbebe;
-}
-body.theme-dark .nav-header {
-  padding-block: 10px;
-  border-bottom: 1px solid rgba(255, 66, 66, .09);
-}
-body.theme-dark .nav-folder-title,
-body.theme-dark .nav-file-title {
-  margin: 2px 4px;
-  padding-block: 6px;
-  border-radius: 6px;
-  color: #c4a8a8;
-}
-body.theme-dark .nav-folder-title { color: #f4baba; font-weight: 650; }
-body.theme-dark .nav-folder-collapse-indicator { color: #ff4545; }
-body.theme-dark .tree-item-children { border-color: rgba(255, 73, 73, .11); }
-body.theme-dark .nav-files-container {
-  background: linear-gradient(90deg, rgba(255, 55, 55, .018), transparent 24%);
-}
-body.theme-dark .workspace-split.mod-sidedock :is(.nav-folder-title, .nav-file-title):hover {
-  color: #ffdfdf;
-  background: linear-gradient(90deg, rgba(255, 40, 40, .13), rgba(255, 40, 40, .025));
-}
+body.theme-dark .workspace-ribbon .clickable-icon { color: #beb0ae; }
+body.theme-dark .workspace-split.mod-sidedock .nav-folder-title { color: #e1d4d1; }
+body.theme-dark .workspace-split.mod-sidedock .nav-folder-collapse-indicator { color: #dd5749; }
 body.theme-dark .workspace-split.mod-sidedock .nav-file-title.is-active {
-  background: linear-gradient(90deg, #750b0b, rgba(140,8,8,.32) 66%, rgba(255,16,16,.07));
-  box-shadow: inset 3px 0 #ff3030, inset 0 1px rgba(255,70,70,.40), inset 0 -1px rgba(255,35,35,.24), 0 0 18px rgba(255,12,12,.16);
-  color: #fff0f0;
-}
-body.theme-dark .workspace-sidedock-vault-profile {
-  background: linear-gradient(180deg, #1b0b0b, #0a0606);
-  border-top-color: rgba(255, 59, 59, .28);
-  box-shadow: 0 -8px 22px rgba(0, 0, 0,.2);
+  color: #fff9f5;
+  background: linear-gradient(90deg, rgba(255, 39, 28, .39), rgba(148, 12, 8, .14) 63%, rgba(20, 5, 5, .09));
+  box-shadow: inset 3px 0 #ff4332, inset 0 0 0 1px rgba(255, 56, 32, .34), 0 0 24px rgba(255, 28, 12, .14);
 }
 /* Menus, settings and document accents share the same lighting language. */
 body.theme-dark :is(.modal, .prompt, .menu, .suggestion-container, .popover) {
