@@ -989,15 +989,11 @@ body.theme-dark :is(.graph-controls,.graph-controls-container) {
 }
 
 
-/* Windows hidden frame: keep native window buttons above Crimson Void's
-   positioned, overflow-visible tab-header decorations. Do not change
-   the native titlebar's position, dimensions, or the tab layout. */
-body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar {
-  z-index: 1001 !important;
-  pointer-events: none !important;
-}
-body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
-body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right .titlebar-button {
-  pointer-events: auto !important;
-  -webkit-app-region: no-drag !important;
+/* Windows hidden frame: Obsidian uses this ::after as the native no-drag
+   cutout beneath the window controls. The decorative rule above sets left: 0;
+   together with native right + width, that anchors the cutout on the wrong side.
+   Restore its native anchor without changing control geometry or drag behavior. */
+body.theme-dark.mod-windows.is-hidden-frameless:not(.is-fullscreen)
+  .workspace-tabs.mod-top-right-space .workspace-tab-header-container::after {
+  left: auto;
 }
